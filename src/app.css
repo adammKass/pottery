@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-lighter: #ffe3e3;
+  --color-light: #f89b9b;
+  --color-neutral: #6b5428;
+  --color-dark: #76552b;
+  --color-darker: #402905;
+  --color-primary: #b17100;
+  --font-sans: "Lato", sans-serif;
+  --font-serif: "PlayfairDisplay", sans-serif;
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Lato-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay;
+  font-style: normal;
+  font-weight: 300 400 700;
+  src: url("/fonts/PlayfairDisplay-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay;
+  font-style: italic;
+  font-weight: 300 400 700;
+  src: url("/fonts/PlayfairDisplay-Italic-VariableFont.ttf") format("truetype");
+}
+
+@layer utils {
+  .content {
+    @apply max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8;
+  }
+}
+
+html {
+  color: var(--color-darker);
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.text {
+  animation-duration: 400ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease;
+}
+
+/* Next animation */
+.text.next {
+  animation-name: slide-up;
+}
+
+/* Previous animation */
+.text.prev {
+  animation-name: slide-down;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    @apply opacity-0 translate-y-6;
+  }
+
+  .reveal-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .reveal-animate {
+    @apply transition-all duration-700 ease-out;
+  }
+}

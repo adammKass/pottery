@@ -1,0 +1,39 @@
+---
+import "../app.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/src/scripts/reveal.js" is:inline></script>
+  </head>
+  <body>
+    <main
+      id="main-content"
+      class="bg-lighter min-h-screen flex flex-col items-center justify-center"
+    >
+      <div
+        class="content flex flex-col gap-1 items-center"
+        data-reveal-stagger
+        data-stagger="200"
+      >
+        <div
+          class="flex gap-1 items-center justify-center reveal"
+          data-reveal-item
+        >
+          <div class="w-24 h-px bg-darker"></div>
+          <span class="font-serif text-sm uppercase">OOps</span>
+          <div class="w-24 h-px bg-darker"></div>
+        </div>
+
+        <h2 class="text-2xl lg:text-3xl uppercase reveal" data-reveal-item>
+          404 - Stránka sa nenašla
+        </h2>
+        <a href="/" class="btn btn-warning uppercase"
+          >Naspäť na hlavnú stránku</a
+        >
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import { gallery } from "../constants";
+---
+
+<section
+  id="gallery"
+  class="flex items-center justify-center relative max-h-[80vh] overflow-hidden"
+  aria-roledescription="carousel"
+  aria-label="Fotogaléria našej spoločnosti"
+>
+  <div class="carousel w-full">
+    {
+      gallery.map((item, index) => (
+        <div
+          id={`item${index + 1}`}
+          class="carousel-item w-full flex justify-center z-10"
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`${index + 1} z ${gallery.length}`}
+        >
+          <Image
+            src={item.img}
+            alt={item.alt}
+            class="w-full aspect-video object-cover"
+          />
+        </div>
+      ))
+    }
+
+    <div
+      class="absolute bottom-4 mx-auto w-full flex flex-col justify-center items-center py-2 z-50 text-lighter gap-4"
+    >
+      <div class="flex flex-col gap-1" data-reveal-stagger data-stagger="200">
+        <div
+          class="flex gap-1 items-center justify-center reveal"
+          data-reveal-item
+        >
+          <div class="w-24 h-px bg-lighter"></div>
+          <span class="font-serif text-sm uppercase">Naša galéria</span>
+          <div class="w-24 h-px bg-lighter"></div>
+        </div>
+        <h2 class="text-2xl lg:text-3xl uppercase reveal" data-reveal-item>
+          Pozrite si našu galériu
+        </h2>
+      </div>
+      <div class="flex justify-center gap-2">
+        {
+          gallery.map((_, index) => (
+            <a
+              href={`#item${index + 1}`}
+              class="btn bg-lighter btn-xs w-12 h-1 rounded-full"
+              aria-label={`Ukáž slide ${index + 1}`}
+              role="button"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

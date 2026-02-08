@@ -1,0 +1,25 @@
+---
+import "../app.css";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/src/scripts/reveal.js" is:inline></script>
+  </head>
+  <body>
+    <Navbar />
+
+    <div class="flex flex-col min-h-screen">
+      <slot />
+      <!-- your content is injected here -->
+    </div>
+
+    <Footer />
+  </body>
+</html>
