@@ -100,7 +100,7 @@ export const testimonials = [
 
   {
     name: "Jane Smith",
-    text: "The developer experience is unreal. Content + components finally make sense.It was such a blast. Really Really.",
+    text: "The developer experience is unreal. Content + components finally make sense.",
   },
   {
     name: "Robert Johnson",

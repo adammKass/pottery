@@ -1,19 +1,30 @@
-<div
-  class="hero min-h-screen bg-[url(/img/hero.jpg)] relative z-10 items-end bg-fixed"
->
-  <div class="hero-overlay opacity-90"></div>
-  <div class="hero-content text-white text-center justify-end items-end">
-    <div class="content" data-reveal-stagger data-stagger="200">
-      <h1
-        class="mb-5 text-5xl lg:text-7xl font-light uppercase text-lighter reveal"
-        data-reveal-item
-      >
-        Keramika s dušou
-      </h1>
-      <p class="mb-5 font-serif font-light reveal" data-reveal-item>
-        Príjemné miesto, priateľský prístup a keramika, ktorá ťa bude baviť od
-        prvého dotyku.
-      </p>
-    </div>
+---
+import { Image } from "astro:assets";
+import hero from "../assets/img/hero.jpg";
+---
+
+<div class="min-h-dvh h-dvh relative z-10 flex flex-col">
+  <div
+    class="content mt-40 text-darker flex flex-col items-center text-center"
+    data-reveal-stagger
+    data-stagger="200"
+  >
+    <h1
+      class="mb-5 text-5xl lg:text-7xl font-light uppercase reveal text-darker"
+      data-reveal-item
+    >
+      Keramika s dušou
+    </h1>
+    <p class="mb-5 font-serif font-light reveal text-darker" data-reveal-item>
+      Príjemné miesto, priateľský prístup a keramika, ktorá ťa bude baviť od
+      prvého dotyku.
+    </p>
+  </div>
+  <div class="w-full grow relative overflow-hidden wave-top">
+    <Image
+      src={hero}
+      alt="Hrnčiar tvarujúci hlinu"
+      class="w-full h-full object-cover brightness-75"
+    />
   </div>
 </div>

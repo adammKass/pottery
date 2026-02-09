@@ -35,7 +35,7 @@ export default function Testimonials() {
       </span>
 
       <p
-        className="relative h-[20dvh] items-center overflow-hidden text-lg mt-8"
+        className="relative h-56 items-center overflow-hidden text-lg mt-8"
         aria-live="polite"
         aria-atomic="true"
       >

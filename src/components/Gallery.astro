@@ -22,7 +22,7 @@ import { gallery } from "../constants";
           <Image
             src={item.img}
             alt={item.alt}
-            class="w-full aspect-video object-cover"
+            class="w-full aspect-square lg:aspect-video object-cover"
           />
         </div>
       ))
@@ -31,7 +31,11 @@ import { gallery } from "../constants";
     <div
       class="absolute bottom-4 mx-auto w-full flex flex-col justify-center items-center py-2 z-50 text-lighter gap-4"
     >
-      <div class="flex flex-col gap-1" data-reveal-stagger data-stagger="200">
+      <div
+        class="flex flex-col gap-1 pointer-events-none z-0"
+        data-reveal-stagger
+        data-stagger="200"
+      >
         <div
           class="flex gap-1 items-center justify-center reveal"
           data-reveal-item
