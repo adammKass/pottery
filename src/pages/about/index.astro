@@ -106,7 +106,7 @@ import { Icon } from "astro-icon/components";
             ullamco in aliqua ipsum commodo occaecat sint sint.
           </p>
           <div
-            class="grid grid-cols-2 grid-rows-2 gap-8"
+            class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-8"
             data-reveal-stagger
             data-stagger="200"
           >
@@ -150,13 +150,13 @@ import { Icon } from "astro-icon/components";
             Incididunt nulla in sunt culpa do anim excepteur culpa pariatur.
           </p>
           <div
-            class="grid grid-cols-3 my-10 gap-10"
+            class="grid grid-cols-1 sm:grid-cols-3 my-10 gap-10"
             data-reveal-stagger
             data-stagger="200"
           >
             {
               aboutTeam.map((item) => (
-                <div class="flex flex-col reveal" data-reveal-item>
+                <div class="flex flex-col reveal max-w-[70vw]" data-reveal-item>
                   <Image
                     src={item.img}
                     alt={item.description}

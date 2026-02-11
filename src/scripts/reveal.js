@@ -1,5 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
+let observer;
+
+function initReveal() {
+  if (observer) observer.disconnect();
+
+  observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -25,7 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll("[data-reveal]")
     .forEach((el) => observer.observe(el));
+
   document
     .querySelectorAll("[data-reveal-stagger]")
     .forEach((el) => observer.observe(el));
+}
+
+/* Initial load */
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("page-loaded");
+  initReveal(); // 👈 THIS WAS MISSING
 });
