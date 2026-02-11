@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import { products } from "../constants";
+import Layout from "../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: {
+      product: product.name.toLowerCase(),
+    },
+    props: {
+      product,
+    },
+  }));
+}
+
+const { product } = Astro.props;
+---
+
+<Layout title={product.name}>
+  <main id="main-content">
+    <div
+      class="w-full aspect-square sm:aspect-video max-h-100 mb-12 wave-bottom"
+    >
+      <Image
+        src={product.imgFeature}
+        alt={product.name}
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Product info -->
+    <div class="content">
+      <div
+        class="mb-12 flex flex-col items-center"
+        data-reveal-stagger
+        data-stagger="200"
+      >
+        <Image
+          src={product.img}
+          alt={product.name}
+          class="w-16 h-auto object-cover brightness-20 mb-2 reveal"
+          data-reveal-item
+        />
+        <div class="flex flex-col gap-1 items-center">
+          <div
+            class="flex gap-1 items-center justify-center reveal"
+            data-reveal-item
+          >
+            <div class="w-24 h-px bg-darker"></div>
+            <span class="font-serif text-sm uppercase">Naša ponuka</span>
+            <div class="w-24 h-px bg-darker"></div>
+          </div>
+
+          <h1 class="text-2xl lg:text-3xl uppercase reveal" data-reveal-item>
+            {product.name}
+          </h1>
+        </div>
+
+        <p class="text-lg text-darker text-center reveal" data-reveal-item>
+          {product.descriptionFull}
+        </p>
+
+        <span
+          class="text-2xl font-semibold text-center text-darker reveal"
+          data-reveal-item
+        >
+          Od {product.price}
+        </span>
+      </div>
+      <div
+        class="flex flex-col gap-1 items-center"
+        data-reveal-stagger
+        data-stagger="200"
+      >
+        <div
+          class="flex gap-1 items-center justify-center reveal"
+          data-reveal-item
+        >
+          <div class="w-24 h-px bg-darker"></div>
+          <span class="font-serif text-sm uppercase">Proces</span>
+          <div class="w-24 h-px bg-darker"></div>
+        </div>
+
+        <h2 class="text-lg lg:text-xl uppercase reveal" data-reveal-item>
+          Čo je zahrnuté v cene
+        </h2>
+      </div>
+
+      <!-- Services -->
+      <div
+        class="flex flex-wrap gap-6 my-8"
+        data-reveal-stagger
+        data-stagger="200"
+      >
+        {
+          product.services.map((service) => (
+            <div
+              class="flex-1 min-w-55 shadow-sm p-6 rounded-xl reveal"
+              data-reveal-item
+            >
+              <h3 class="text-xl font-light font-serif uppercase mb-2">
+                {service.title}
+              </h3>
+              <p class="text-darker text-sm">{service.description}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div
+        class="flex flex-col gap-1 items-center mb-6"
+        data-reveal-stagger
+        data-stagger="200"
+      >
+        <div
+          class="flex gap-1 items-center justify-center reveal"
+          data-reveal-item
+        >
+          <div class="w-24 h-px bg-darker"></div>
+          <span class="font-serif text-sm uppercase">Máte záujem?</span>
+          <div class="w-24 h-px bg-darker"></div>
+        </div>
+
+        <h2 class="text-lg lg:text-xl uppercase reveal" data-reveal-item>
+          Kontaktujte nás
+        </h2>
+        <a
+          href="#contact"
+          class="btn btn-primary uppercase w-full max-w-2xl mt-1 reveal"
+          data-reveal-item>Kontakt</a
+        >
+      </div>
+    </div>
+  </main>
+</Layout>

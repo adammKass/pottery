@@ -1,0 +1,175 @@
+---
+import { Image } from "astro:assets";
+import { aboutStatistics, aboutTeam, aboutValues } from "../../constants";
+import Layout from "../../layouts/Layout.astro";
+import about from "../../assets/img/about.jpg";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Home">
+  <main id="main-content">
+    <section id="main-content">
+      <div
+        class="content w-full items-center flex flex-col mb-10"
+        data-reveal-stagger
+        data-stagger="200"
+      >
+        <div class="flex flex-col gap-1 items-center">
+          <div
+            class="flex gap-1 items-center justify-center reveal mt-20"
+            data-reveal-item
+          >
+            <div class="w-24 h-px bg-darker"></div>
+            <span class="font-serif text-sm uppercase text-darker">O nás</span>
+            <div class="w-24 h-px bg-darker"></div>
+          </div>
+
+          <h1
+            class="text-2xl lg:text-3xl uppercase reveal text-darker"
+            data-reveal-item
+          >
+            Preskúmajte našu dielňu
+          </h1>
+        </div>
+        <p
+          class="mb-5 font-serif font-light text-darker text-center md:text-start reveal"
+          data-reveal-item
+        >
+          Príjemné miesto, priateľský prístup a keramika, ktorá ťa bude baviť od
+          prvého dotyku.
+        </p>
+
+        <p
+          class="columns-1 md:columns-2 mb-10 text-center md:text-start reveal"
+          data-reveal-item
+        >
+          Sunt proident mollit sunt aliquip eiusmod cillum culpa ut ullamco
+          Lorem ad. Lorem nulla Lorem sunt occaecat mollit Lorem dolor enim
+          veniam nisi cupidatat ex veniam. Commodo magna ullamco culpa aliqua
+          deserunt laboris elit labore veniam. Eu pariatur qui ad adipisicing
+          sint tempor commodo. Consequat et aliquip Lorem ex in in enim aliquip
+          et amet. Veniam veniam culpa pariatur quis labore. Qui ea dolor
+          pariatur magna aute incididunt. Laboris sunt consequat commodo magna
+          qui. Amet labore occaecat occaecat non ea ut consequat duis nisi non
+          ipsum dolore. Consequat sint reprehenderit ad amet ad exercitation
+          duis. Enim elit dolor nulla magna ipsum aliqua sint sunt commodo
+          cillum. Occaecat aute officia eiusmod ea dolore eu.
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 self-start sm:self-center"
+          data-reveal-stagger
+          data-stagger="200"
+        >
+          {
+            aboutStatistics.map((statistic) => (
+              <div
+                class="flex flex-col items-start gap-2 reveal shadow-sm p-4"
+                data-reveal-item
+              >
+                <h3 class="font-bold text-3xl">{statistic.number}</h3>
+                <span>{statistic.text}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <Image
+        src={about}
+        alt="Pohľad na hrnčiarske štúdio"
+        class="w-full h-full"
+      />
+      <div class="content">
+        <div
+          class="flex flex-col items-center my-10 gap-6"
+          data-reveal-stagger
+          data-stagger="200"
+        >
+          <div class="flex flex-col gap-1 items-center">
+            <div
+              class="flex gap-1 items-center justify-center reveal"
+              data-reveal-item
+            >
+              <div class="w-24 h-px bg-darker"></div>
+              <span class="font-serif text-sm uppercase">O nás</span>
+              <div class="w-24 h-px bg-darker"></div>
+            </div>
+
+            <h2 class="text-lg lg:text-xl uppercase reveal" data-reveal-item>
+              Naše hodnoty
+            </h2>
+          </div>
+          <p class="max-w-prose text-center reveal" data-reveal-item>
+            Minim elit qui sint amet. Et anim mollit mollit magna magna non.
+            Amet consequat dolore Lorem sit occaecat ut pariatur Lorem cillum
+            qui. Aliquip enim cupidatat magna labore id esse laborum in. Dolor
+            velit cillum consectetur id mollit exercitation duis id. Consectetur
+            ullamco in aliqua ipsum commodo occaecat sint sint.
+          </p>
+          <div
+            class="grid grid-cols-2 grid-rows-2 gap-8"
+            data-reveal-stagger
+            data-stagger="200"
+          >
+            {
+              aboutValues.map((value) => (
+                <div
+                  class="flex flex-col items-center gap-2 reveal text-center"
+                  data-reveal-item
+                >
+                  <Icon name={value.icon} class="text-6xl" />
+                  <span class="font-bold uppercase">{value.span}</span>
+                  <p class="inline-block">{value.text}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center"
+          data-reveal-stagger
+          data-stagger="200"
+        >
+          <div class="flex flex-col gap-1 items-center">
+            <div
+              class="flex gap-1 items-center justify-center reveal"
+              data-reveal-item
+            >
+              <div class="w-24 h-px bg-darker"></div>
+              <span class="font-serif text-sm uppercase">O nás</span>
+              <div class="w-24 h-px bg-darker"></div>
+            </div>
+
+            <h2 class="text-lg lg:text-xl uppercase reveal" data-reveal-item>
+              Náš tím
+            </h2>
+          </div>
+          <p class="max-w-prose text-center reveal mt-4" data-reveal-item>
+            Deserunt consequat nostrud culpa voluptate. Laboris nisi nisi
+            aliquip veniam proident consequat Lorem nisi voluptate est sit.
+            Cupidatat eiusmod proident anim excepteur veniam cupidatat.
+            Incididunt nulla in sunt culpa do anim excepteur culpa pariatur.
+          </p>
+          <div
+            class="grid grid-cols-3 my-10 gap-10"
+            data-reveal-stagger
+            data-stagger="200"
+          >
+            {
+              aboutTeam.map((item) => (
+                <div class="flex flex-col reveal" data-reveal-item>
+                  <Image
+                    src={item.img}
+                    alt={item.description}
+                    class="w-full aspect-square rounded-xl mb-4"
+                  />
+                  <h4 class="font-bold text-lg">{item.name}</h4>
+                  <span class="font-light uppercase">{item.description}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

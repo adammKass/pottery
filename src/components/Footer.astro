@@ -4,12 +4,12 @@ import { navlinks } from "../constants";
 import LogoLong from "../assets/Logo-long.svg";
 ---
 
-<div class="bg-white w-full">
+<div class="bg-white w-full border-t-2 lg:border-t-3 border-lighter">
   <footer
     id="contact"
-    class="footer sm:footer-left sm:footer-horizontal text-base-content p-10 content"
+    class="footer footer-center footer-horizontal sm:footer-vertical text-base-content p-10"
   >
-    <aside class="flex flex-col text-left items-start">
+    <aside class="flex flex-col text-left items-start self-start">
       <a class="btn btn-ghost text-xl"
         ><LogoLong width={128} height={64} fill="currentColor" /></a
       >
@@ -68,8 +68,9 @@ import LogoLong from "../assets/Logo-long.svg";
         </nav>
       </div>
     </aside>
-    <nav>
+    <nav class="self-start">
       <h6 class="footer-title">O nás</h6>
+
       {
         navlinks.map((link) => (
           <a href={link.path} class="link link-hover">
@@ -78,7 +79,7 @@ import LogoLong from "../assets/Logo-long.svg";
         ))
       }
     </nav>
-    <nav>
+    <nav class="self-start">
       <h6 class="footer-title">Právne informácie</h6>
       <a class="link link-hover">Podmienky používania</a>
       <a class="link link-hover">GDPR</a>
@@ -111,8 +112,8 @@ import LogoLong from "../assets/Logo-long.svg";
       </button>
     </form>
   </footer>
-  <div class="bg-darker py-2">
-    <p class="text-center text-sm text-lighter">
+  <div class="bg-lighter py-2">
+    <p class="text-center text-sm text-darker">
       Copyright © {new Date().getFullYear()} - Všetky práva vyhradené
     </p>
   </div>

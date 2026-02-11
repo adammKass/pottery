@@ -1,31 +1,41 @@
-<section
-  id="about"
-  class="flex flex-col lg:flex-row h-fit items-center justify-center py-12 relative"
->
-  <div
-    class="w-full h-full flex flex-col max-w-lg p-6 lg:p-12 text-center items-center lg:items-start lg:text-left gap-4"
-    data-reveal-stagger
-    data-stagger="200"
-  >
-    <div class="flex gap-1 items-center justify-center reveal" data-reveal-item>
-      <div class="w-24 h-px bg-darker"></div>
-      <span class="font-serif text-sm uppercase">O nás</span>
-      <div class="w-24 h-px bg-darker"></div>
-    </div>
-    <h2 class="text-2xl lg:text-3xl uppercase reveal" data-reveal-item>
-      Naša história
-    </h2>
-    <p class="reveal" data-reveal-item>
-      Naša keramická dielňa vznikla z vášne k tvorbe a túžby priniesť do sveta
-      niečo jedinečné. Sme skupina nadšených umelcov, ktorí veria, že keramika
-      je viac než len remeslo – je to spôsob vyjadrenia našej kreativity a
-      spojenia s prírodou.
-    </p>
-    <button class="btn btn-primary w-fit uppercase">Zisti viac</button>
-  </div>
+---
+import { Image } from "astro:assets";
+import about from "../assets/img/about.jpg";
+---
 
+<section id="about" class="py-12 relative">
   <div
-    class="w-full h-84 grow relative wave-right bg-[url('/img/about.jpg')] bg-fixed bg-center bg-cover brightness-75"
+    class="content flex flex-col lg:flex-row h-fit items-center justify-center"
   >
+    <div
+      class="w-full h-full flex flex-col p-6 lg:p-12 text-center items-center lg:items-start lg:text-left gap-4 max-w-160"
+      data-reveal-stagger
+      data-stagger="200"
+    >
+      <div
+        class="flex gap-1 items-center justify-center reveal"
+        data-reveal-item
+      >
+        <div class="w-24 h-px bg-darker"></div>
+        <span class="font-serif text-sm uppercase">O nás</span>
+        <div class="w-24 h-px bg-darker"></div>
+      </div>
+      <h2 class="text-2xl lg:text-3xl uppercase reveal" data-reveal-item>
+        Naša história
+      </h2>
+      <p class="reveal" data-reveal-item>
+        Naša keramická dielňa vznikla z vášne k tvorbe a túžby priniesť do sveta
+        niečo jedinečné. Sme skupina nadšených umelcov, ktorí veria, že keramika
+        je viac než len remeslo – je to spôsob vyjadrenia našej kreativity a
+        spojenia s prírodou.
+      </p>
+      <a href="/about" class="btn btn-primary w-fit uppercase">Zisti viac</a>
+    </div>
+
+    <div
+      class="w-full h-84 grow relative wave-right bg-[url('/img/about.jpg')] bg-fixed bg-center bg-cover brightness-75"
+    >
+      <Image src={about} alt="Štúdio" class="w-full object-cover" />
+    </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 <div class="min-h-dvh h-dvh relative z-10 flex flex-col">
   <div
-    class="content mt-40 text-darker flex flex-col items-center text-center"
+    class="content mt-20 lg:mt-40 text-darker flex flex-col items-center text-center"
     data-reveal-stagger
     data-stagger="200"
   >
@@ -14,6 +14,24 @@
       Príjemné miesto, priateľský prístup a keramika, ktorá ťa bude baviť od
       prvého dotyku.
     </p>
+
+    <!-- Scroll down indicator -->
+    <div
+      id="scrollHint"
+      class="flex-col items-center mt-2 reveal hidden md:flex"
+      data-reveal-item
+    >
+      <div
+        class="w-6 h-10 border-2 border-darker rounded-full flex justify-center"
+      >
+        <span class="w-1 h-2 bg-darker rounded-full mt-2 animate-scroll-dot"
+        ></span>
+      </div>
+
+      <span class="mt-3 text-xs uppercase tracking-widest text-darker">
+        Posuňte nižšie
+      </span>
+    </div>
   </div>
   <div
     class="w-full grow relative wave-top bg-[url('/img/hero.jpg')] bg-fixed bg-center bg-cover brightness-75"

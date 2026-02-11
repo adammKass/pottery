@@ -28,7 +28,7 @@ import { products } from "../constants";
       {
         products.map((product) => (
           <div
-            class="card shadow-sm btn btn-ghost py-2 lg:py-8 justify-center gap-4 h-fit lg:h-80 reveal"
+            class="card shadow-sm  py-2 lg:py-8 justify-center gap-4 h-fit lg:h-80 reveal hover:bg-lighter transition-colors duration-300 ease-in-out"
             data-reveal-item
           >
             <figure class="">
@@ -38,10 +38,18 @@ import { products } from "../constants";
                 class="w-32 aspect-square opacity-50"
               />
             </figure>
-            <div class=" px-4 pb-0 pt-2 text-center">
-              <h2 class="uppercase">{product.name}</h2>
+            <div class=" px-4 pb-0 pt-2 text-center flex flex-col">
+              <h2 class="uppercase font-light font-serif text-xl">
+                {product.name}
+              </h2>
 
-              <a class="font-serif text-sm ">Od {product.price}</a>
+              <span class=" uppercase text-sm ">Od {product.price}</span>
+              <a
+                href={`/${product.name.toLowerCase()}`}
+                class="btn btn-ghost mt-2"
+              >
+                Zistiť viac
+              </a>
             </div>
           </div>
         ))
