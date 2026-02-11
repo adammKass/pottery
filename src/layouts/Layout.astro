@@ -11,8 +11,10 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="module" src="/src/scripts/reveal.js"></script>
-    <script type="module" src="/src/scripts/lenis.js"></script>
+    <script type="module">
+      import "../scripts/reveal.js";
+      import "../scripts/lenis.js";
+    </script>
     <script is:inline>
       document.documentElement.classList.add("js");
     </script>
